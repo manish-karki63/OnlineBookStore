@@ -2,13 +2,12 @@
 	$conn= new mysqli('localhost','root','','book_store_db')or die("Could not connect to mysql".mysqli_error($con));
 ?>
 <!DOCTYPE html>
-<html>
 	<head>
 		<title>Home Page</title>
-		<link rel='stylesheet' href='CSS/header.css' type='text/css'/>
-		<link rel='stylesheet' href='CSS/footer.css' type='text/css'/>
-		<link rel='stylesheet' href='CSS/index.css' type='text/css'/>
-		<link rel="stylesheet" href="CSS/fontAwesome/css/font-awesome.css" type="text/css"/>
+		<link rel='stylesheet' href='css/header.css' type='text/css'/>
+		<link rel='stylesheet' href='css/footer.css' type='text/css'/>
+		<link rel='stylesheet' href='css/index.css' type='text/css'/>
+		<link rel="stylesheet" href="css/fontAwesome/css/font-awesome.css" type="text/css"/>
 		<style>
 		    #cat-list li{
 		        cursor: pointer;
@@ -40,10 +39,10 @@
 				</div>
 				<div class="nav-menu">
 					<ol>
-						<li><a href="fee_info.php">Home</a></li>
-						<li><a href="feedetails.php">Cart</a></li>
-						<li><a href="Database/signout_db.php">About</a></li>
-						<li><a href="">Login</a></li>
+						<li><a href="#">Home</a></li>
+						<li><a href="cart.php">Cart</a></li>
+						<li><a href="">About</a></li>
+						<li><a href="login.php">Login</a></li>
 					</ol>
 				</div>
 			</div>
@@ -91,7 +90,7 @@
                                          		<span class="badge badge-pill badge-primary text-white"><i class="fa fa-tag"></i> <?php echo number_format($row['price']) ?></span>
                                      		</div>
                                      		<div class="card-img-top d-flex justify-content-center" style="max-height: 30vh;overflow: hidden">
-                                     			<img class="img-fluid" src="admin/assets/uploads/<?php echo $row['image_path'] ?>" alt="Card image cap">
+                                     			<img class="img-fluid" src="assets/img/<?php echo $row['image_path'] ?>" alt="Card image cap">
                                        
                                      		</div>
                                       		<div class="float-right align-top d-flex">
