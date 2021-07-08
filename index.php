@@ -41,7 +41,7 @@
 					<ol>
 						<li><a href="#">Home</a></li>
 						<li><a href="cart.php">Cart</a></li>
-						<li><a href="">About</a></li>
+						<li><a href="about.php">About</a></li>
 						<li><a href="login.php">Login</a></li>
 					</ol>
 				</div>
@@ -117,7 +117,7 @@
                                             		</small>
                                           		</p>
                                          		<p class="truncate"><?php echo $row['description'] ?></p>
-                                        		<button class="btn btn-primary btn-sm view_prod" type="button" data-id="<?php echo $row['id'] ?>"> View</button>
+                                        		<button class="btn btn-primary btn-sm view_prod" type="button" data-id="<?php echo $row['id'] ?>"><a href="bookDetail.php" style="color: #fff; text-decoration: none;">View</a> </button>
                                      		</div>
                                  		</div>
                              		</div>

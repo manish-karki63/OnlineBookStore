@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 	<head>
-		<title>Home Page</title>
+		<title>Cart</title>
 		<link rel='stylesheet' href='css/header.css' type='text/css'/>
 		<link rel='stylesheet' href='css/footer.css' type='text/css'/>
 		<link rel="stylesheet" href="css/fontAwesome/css/font-awesome.css" type="text/css"/>
@@ -19,7 +19,7 @@
 					<ol>
 						<li><a href="index.php">Home</a></li>
 						<li><a href="cart.php">Cart</a></li>
-						<li><a href="">About</a></li>
+						<li><a href="about.php">About</a></li>
 						<li><a href="login.php">Login</a></li>
 					</ol>
 				</div>

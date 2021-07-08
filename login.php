@@ -21,7 +21,7 @@
 					<ol>
 						<li><a href="index.php">Home</a></li>
 						<li><a href="cart.php">Cart</a></li>
-						<li><a href="">About</a></li>
+						<li><a href="about.php">About</a></li>
 						<li><a href="">Login</a></li>
 					</ol>
 				</div>
@@ -47,8 +47,6 @@
 					</div>
 					<div class="button">
 						<input type="submit" name="login" value="Login"/>
-						<a href='reset_password.php'>
-						<input type="button" name="forgetpsw" value="Forget Password"/></a>
 					</div>
 				</form>
 			</div><!--login-form-wrapper-->
