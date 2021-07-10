@@ -4,6 +4,7 @@ footer{
 	padding: 15px 0;
 	text-align: center;
 	margin-top: 6px;
+	float: none;
 }
 footer ul{
 	margin: 0;

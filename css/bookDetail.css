@@ -6,6 +6,13 @@
 
 }
 
+.book-info-section:before,
+.book-info-section:after{
+	clear: both;
+	display: block;
+	content: '';
+}
+
 .image:before,
 .image:after{
 	clear: both;
