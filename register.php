@@ -1,3 +1,6 @@
+<?php
+	include('database/signup_db.php');
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,24 +13,9 @@
 		<script type="text/javascript" src="javascript/register.js"></script>
 	</head>
 	<body>
-		<div class="inner-header-wrapper" style="">
-			<div class="logo">
-				<a href="#"><img src="assets/img/logo.png" alt="logo"/></a>
-			</div>
-			<div class="inner-header">
-				<div class="title">
-					<a href="">Online Book Store</a>
-				</div>
-				<div class="nav-menu">
-					<ol>
-						<li><a href="index.php">Home</a></li>
-						<li><a href="cart.php">Cart</a></li>
-						<li><a href="about.php">About</a></li>
-						<li><a href="">Login</a></li>
-					</ol>
-				</div>
-			</div>
-		</div>
+		<?php
+			include('header.php');
+		?>
 		
 		<!--Sign Up Form-->
 		<div class="signup-form">
@@ -41,12 +29,12 @@
 					</div>
 					<div class='input-group'>
 						<label>Contact</label>
-						<input type='text' name='roll' placeholder="Your Roll Here"/>
+						<input type='text' name='contact' placeholder="Your Roll Here"/>
 						<span class="roll-msg" style="color: red;"></span>
 					</div>
 					<div class='input-group'>
 						<label>Address</label>
-						<input type='text' name='phone' placeholder="Your Phone Number Here"/>
+						<input type='text' name='address' placeholder="Your Phone Number Here"/>
 						<span class="phone-msg" style="color: red;"></span>
 					</div>
 					<div class="input-group">

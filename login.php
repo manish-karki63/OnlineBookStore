@@ -1,3 +1,6 @@
+<?php
+	include('database/login_db.php');
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,32 +12,17 @@
 		<link rel='stylesheet' href='css/login.css' type='text/css'/>
 	</head>
 	<body>
-		<div class="inner-header-wrapper" style="">
-			<div class="logo">
-				<a href="#"><img src="assets/img/logo.png" alt="logo"/></a>
-			</div>
-			<div class="inner-header">
-				<div class="title">
-					<a href="">Online Book Store</a>
-				</div>
-				<div class="nav-menu">
-					<ol>
-						<li><a href="index.php">Home</a></li>
-						<li><a href="cart.php">Cart</a></li>
-						<li><a href="about.php">About</a></li>
-						<li><a href="">Login</a></li>
-					</ol>
-				</div>
-			</div>
-		</div>
+		<?php
+			include('header.php');
+		?>
 		
 		<!--Login Form-->
 		<div class="login-form">
 			<div class="login-form-wrapper">
 				<h3>Enter Your Email and Password</h3>
 				<form action='' method='post' enctype=''>
-					<?php {?>
-					<div><label><?php echo 'Welcome';?></label></div><?php } ?>
+					<?php if($message){?>
+					<div><?php echo $message;?></div><?php } ?>
 					<div class="input-group">
 						<label>Email</label>
 						<input type='email' name='email' placeholder="Your Email Here"/>

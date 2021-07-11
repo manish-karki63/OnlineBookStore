@@ -28,25 +28,9 @@
 	<body>
 		<?php 
 			$cid = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
+			include('header.php');
 		?>
-		<div class="inner-header-wrapper" style="">
-			<div class="logo">
-				<a href="#"><img src="assets/img/logo.png" alt="logo"/></a>
-			</div>
-			<div class="inner-header">
-				<div class="title">
-					<a href="">Online Book Store</a>
-				</div>
-				<div class="nav-menu">
-					<ol>
-						<li><a href="#">Home</a></li>
-						<li><a href="cart.php">Cart</a></li>
-						<li><a href="about.php">About</a></li>
-						<li><a href="login.php">Login</a></li>
-					</ol>
-				</div>
-			</div>
-		</div>
+
 		<div class="contain-fluid">
     		<div class="col-lg-12">
         		<div class="row">
