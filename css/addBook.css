@@ -1,0 +1,63 @@
+
+
+/**************************/
+/* *** book form*********/
+.book-form{
+	padding: 60px 0;
+}
+.book-form .book-form-wrapper{
+	width: 600px;
+	margin: 0 auto;
+}
+.book-form h2{
+	margin-bottom: 30px;
+}
+.book-form .input-group{
+	padding-bottom:  30px;
+}
+.book-form label{
+	display: block;
+	font-weight: 600;
+	font-size: 18px;
+	text-transform: capitalize;
+	margin-bottom: 15px;
+}
+.book-form input,
+.book-form textarea,
+.book-form select{
+	width:100%;
+	padding:10px 30px;
+	border-radius: 5px;
+	outline:0;
+	border: 1px solid #eee;
+	font-weight: 500;
+	font-size: 16px;
+	font-family: 'poppins';
+}
+.book-form textarea{
+	height: 150px;
+}
+
+.book-form select{
+	width: 100%;
+}
+.book-form button{
+	background: teal;
+	color:white;
+	text-transform:uppercase;
+	line-height:1;
+	padding:15px 45px;
+	outline:0;
+	border: 1px solid transparent;
+	font-weight: 500;
+	font-size: 16px;
+	font-family: 'poppins';
+	cursor: pointer;
+	border-radius: 25px;
+	border: 2px solid teal;
+	transition: all 0.3s ease;
+}
+.book-form button:hover{
+	transform: scale(0.9);
+}
+

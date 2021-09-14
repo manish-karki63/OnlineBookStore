@@ -1,0 +1,9 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['adminID'])){
+		header('refresh:0,URL=adminLogin.php');
+	}
+	else{
+		header('refresh:0,URL=books.php');
+	}
+?>

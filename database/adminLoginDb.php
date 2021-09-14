@@ -7,23 +7,22 @@ session_start();
 			$message = "Login First";
 		}
 	}
-	//require('Database/login_db.php' );
 	if(isset($_POST['login']))
 	{
-		$select = "select email,password,name,id from customers";
+		$select = "select username,password,name,id from users";
 		$data = mysqli_query($connect,$select) or die('Selection Error');
-		$email = $_POST['email'];
+		$username = $_POST['username'];
 		$password = $_POST['password'];
-		$_SESSION['email']=$email;
-		$_SESSION['password']=$password;
+		$_SESSION['adminUsername']=$username;
+		$_SESSION['adminPassword']=$password;
 		while($arr=mysqli_fetch_assoc($data))
 		{
-			if($_SESSION['email'] == $arr['email'] && $_SESSION['password'] == $arr['password']){
-				$_SESSION['email']=$arr['email'];
-				$_SESSION['password']=$arr['password'];
-				$_SESSION['name']=$arr['name'];
-				$_SESSION['id']=$arr['id'];	
-				header('refresh:0,URL=index.php');
+			if($_SESSION['adminUsername'] == $arr['username'] && $_SESSION['adminPassword'] == $arr['password']){
+				$_SESSION['adminUsername']=$arr['username'];
+				$_SESSION['adminPassword']=$arr['password'];
+				$_SESSION['adminName']=$arr['name'];
+				$_SESSION['adminID']=$arr['id'];	
+				header('refresh:0,URL=books.php');
 				echo $_SESSION['name'];
 
 				exit;

@@ -1,4 +1,5 @@
 <?php
+session_start();
 	$conn= new mysqli('localhost','root','','book_store_db')or die("Could not connect to mysql".mysqli_error($con));
 ?>
 <!DOCTYPE html>
@@ -101,7 +102,7 @@
                                             		</small>
                                           		</p>
                                          		<p class="truncate"><?php echo $row['description'] ?></p>
-                                        		<button class="btn btn-primary btn-sm view_prod" type="button" data-id="<?php echo $row['id'] ?>"><a href="bookDetail.php" style="color: #fff; text-decoration: none;">View</a> </button>
+                                        		<button class="btn btn-primary btn-sm view_prod" type="button" ><a href="bookDetail.php?id=<?php echo $row['id']; ?>" style="color: #fff; text-decoration: none;">View</a> </button>
                                      		</div>
                                  		</div>
                              		</div>

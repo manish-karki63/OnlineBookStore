@@ -4,6 +4,12 @@
 	height: auto;
 	margin-top: 10px;
 }
+.line:before,
+.line:after{
+	clear: both;
+	display: block;
+	content: '';
+}
 
 .cart-info-wrapper:before,
 .cart-info-wrapper:after{
@@ -26,7 +32,7 @@
 	content: '';
 }
 
-.cart-info-section{
+.carts{
 	float: left;
 	width: 65%;
 	border-style: ridge;
@@ -38,6 +44,8 @@
 	float: right;
 	width: 30%;
 }
+
+
 
 .cart-img:before,
 .cart-img:after,

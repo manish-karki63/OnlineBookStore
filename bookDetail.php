@@ -1,3 +1,30 @@
+<?php
+session_start();
+$conn = mysqli_connect('localhost','root','','book_store_db') or die('Connection Error');
+	if(isset($_GET['id'])){
+		$qry = $conn->query("SELECT * FROM books where id= ".$_GET['id']);
+		foreach($qry->fetch_array() as $k => $val){
+			$$k=$val;
+		}
+		if(!empty($category_ids))
+		$cat_qry = $conn->query("SELECT * FROM categories where id in ($category_ids)");
+		$cname = array();
+		while($row=$cat_qry->fetch_array()){
+			$cname[$row['id']] = ucwords($row['name']);
+		}
+	}
+	if(isset($_POST['submit'])){
+		if(!isset($_SESSION['id'])){
+			header('refresh:0,URL=login.php');
+		}
+		$cid = $_SESSION['id'];
+		$id = $_GET['id'];
+		$num = $_POST['num'];
+		$insert = "insert into cart(book_id,qty,price,customer_id) values($id,$num,$price,$cid)";
+		mysqli_query($conn,$insert) or die('Insertion Error'.$insert);
+	}
+?>
+
 <!DOCTYPE html>
 	<head>
 		<title>Book Detail</title>
@@ -15,25 +42,42 @@
 		<!--Book Detail-->
 		<div class="book-info-section">
 			<div class="image">
-				<img src="assets/img/1604631960_python_book.JPG" alt="img"/>
+				<img src="assets/img/<?php echo $image_path?>" alt="img"/>
 			</div>
 			<div class="book-container">
 				<ul class="book-info">
-					<li><span>Title:</span> Core Java Volume I – Fundamentals</li>
-					<li><span>Author:</span>Cay S. Horstmann</li>
-					<li><span>Category:</span>Educational, Programming</li>
-					<li><span>Price:</span>2500</li>
+					<li><span>Title:</span><b><?php echo $title?></b></li>
+					<li><span>Author:</span><b><?php echo $author?></b></li>
+					<li><span>Category:</span><b>
+					    <?php 
+					      $cats = '';
+					      $cat = explode(',', $category_ids);
+					      foreach ($cat as $key => $value) {
+					        if(!empty($cats)){
+					          $cats .=", ";
+					        }
+					        if(isset($cname[$value])){
+					          $cats .= $cname[$value];
+					        }
+					      }
+					      echo $cats;
+					      ?>
+					    </b></li>
+					<li><span>Price:</span><b><?php echo $price?></b></li>
 					<li><span>Description:</span>
-						<p>Core Java Volume I – Fundamentals is a Java reference book (Best book for Java)that offers a detailed explanation of various features of Core Java, including exception handling, interfaces, and lambda expressions. Significant highlights of the book include simple language, conciseness, and detailed examples. The latest edition of the Core Java Volume I – Fundamentals comprehensively updated for covering Java SE 9, 10 & 11. The book helps Java programmers develop an ability to write highly robust and maintainable code.</p>
+						<p><?php echo $description?></p>
 					</li>
 				</ul>
 				<div>
+					<form action="" method = "post">
 					<input type="number" name="num" value="1" />
 					<input type="submit" name="submit" value="Add to Cart" style="background: grey; color:white; text-transform:uppercase;
 	line-height:1; padding:15px 45px; outline:0; border: 1px solid transparent;	font-weight: 400;
 	font-size: 14px; cursor: pointer; border-radius: 25px; border: 2px solid grey; transition: all 0.3s ease;" />
+</form>
 				</div>
 			</div>
+		
 		</div>
 
 

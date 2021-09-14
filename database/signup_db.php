@@ -12,8 +12,11 @@
 			$insert = "insert into customers(name,address,contact,email,password,date_created)
 			values('$name','$address','$contact','$email','$password','$date')";
 			mysqli_query($connect,$insert) or die("Insertion Error");
+			header('refresh:0,URL=login.php');
+				exit;
 		}else{
 			die('Enter Same password');
 		}
+
 	}
 ?>

@@ -29,12 +29,12 @@
 					</div>
 					<div class='input-group'>
 						<label>Contact</label>
-						<input type='text' name='contact' placeholder="Your Roll Here"/>
+						<input type='text' name='contact' placeholder="Your Contact Here"/>
 						<span class="roll-msg" style="color: red;"></span>
 					</div>
 					<div class='input-group'>
 						<label>Address</label>
-						<input type='text' name='address' placeholder="Your Phone Number Here"/>
+						<input type='text' name='address' placeholder="Your Address Here"/>
 						<span class="phone-msg" style="color: red;"></span>
 					</div>
 					<div class="input-group">

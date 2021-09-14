@@ -1,0 +1,42 @@
+.category{
+	height: 78vh;
+	width: 80%;
+}
+.add-category:before,
+.add-category:after,
+.display-category:before,
+.display-category:after{
+	clear: both;
+	content:'';
+	display:block;
+}
+.add-category{
+	padding: 5%;
+	float: left;
+	width: 50%;
+}
+.display-category{
+	padding: 5%;
+	float: right;
+	width: 50%;
+}
+
+.add-category .input-group{
+	padding-bottom: 20px;
+}
+.add-category label{
+	display: block;
+	font-weight: 600;
+	font-size: 18px;
+	text-transform: capitalize;
+	margin-bottom: 15px;
+}
+..add-category input{
+	width:60%;
+	padding:10px 30px;
+	border-radius: 5px;
+	outline:0;
+	border: 1px solid #eee;
+	font-weight: 500;
+	font-size: 16px;
+}

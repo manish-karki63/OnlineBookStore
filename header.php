@@ -13,8 +13,8 @@
 						<li><a href="cart.php">Cart</a></li>
 						<li><a href="about.php">About</a></li>
 						<li><?php 
-								if(isset($_SESSION['name'])){
-									echo "<a>".$_SESSION['name']." </a>";
+								if(isset($_SESSION['email'])){
+									echo "<a href='logout.php'>Logout</a>";
 								}else{
 									echo "<a href='login.php'>Login</a>";
 								}

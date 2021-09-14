@@ -1,0 +1,9 @@
+<?php
+	session_start();
+	$_SESSION['email']="";
+	$_SESSION['password']='';
+	$_SESSION['name']='';
+	$_SESSION['id']='';
+	session_destroy();
+	header('refresh:0,URL=index.php');
+?>

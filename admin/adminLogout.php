@@ -1,0 +1,9 @@
+<?php
+	session_start();
+	$_SESSION['adminUsername']="";
+	$_SESSION['adminPassword']="";
+	$_SESSION['adminName']="";
+	$_SESSION['adminID']="";
+	session_destroy();
+	header('refresh:0,URL=index.php');
+?>
