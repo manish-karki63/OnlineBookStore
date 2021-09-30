@@ -34,26 +34,8 @@ session_start();
 
 		<div class="contain-fluid">
     		<div class="col-lg-12">
-        		<div class="row">
-            		<div class="col-md-3">
-                		<div class="card">
-                    		<div class="card-header">Categories</div>
-                   				 <div class="card-body">
-                        			<ul class='list-group' id='cat-list'>
-                            			<li class='list-group-item' data-id='all' data-href="index.php?page=home&category_id=all">All</li>
-                            			<?php
-                               				$cat = $conn->query("SELECT * FROM categories order by name asc");
-                                			while($row=$cat->fetch_assoc()):
-                                    			$cat_arr[$row['id']] = $row['name'];
-                             			?>
-                            			<li class='list-group-item' data-id='<?php echo $row['id'] ?>' data-href="index.php?page=home&category_id=<?php echo $row['id'] ?>"><?php echo ucwords($row['name']) ?></li>
-
-                            			<?php endwhile; ?>
-                        			</ul>
-
-                    			</div>
-                		</div>
-            		</div>
+        		<div class="row1">
+            		
             		<div class="col-md-9">
                 		<div class="card">
                     		<div class="card-body">

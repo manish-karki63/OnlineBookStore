@@ -12,7 +12,7 @@ session_start();
 		<link rel='stylesheet' href='css/header.css' type='text/css'/>
 		<link rel='stylesheet' href='css/button.css' type='text/css'/>
 		<link rel='stylesheet' href='css/footer.css' type='text/css'/>
-		<link rel="stylesheet" type="text/css" href="css/cart.css">
+		<link rel="stylesheet" type="text/css" href="css/cart.css"/>
 		<link rel="stylesheet" href="css/fontAwesome/css/font-awesome.css" type="text/css"/>
 		
 	</head>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 02, 2021 at 06:02 PM
+-- Generation Time: Sep 17, 2021 at 12:43 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -45,9 +45,9 @@ CREATE TABLE `books` (
 
 INSERT INTO `books` (`id`, `category_ids`, `title`, `author`, `description`, `qty`, `price`, `image_path`, `date_created`) VALUES
 (3, '1,2', 'Core Java Volume I – Fundamentals', 'Cay S. Horstmann', ' Core Java Volume I – Fundamentals is a Java reference book (Best book for Java)that offers a detailed explanation of various features of Core Java, including exception handling, interfaces, and lambda expressions. Significant highlights of the book include simple language, conciseness, and detailed examples. The latest edition of the Core Java Volume I – Fundamentals comprehensively updated for covering Java SE 9, 10 & 11. The book helps Java programmers develop an ability to write highly robust and maintainable code.', 0, 2399, '1625712780_1604631420_books-1419613.jpg', '2021-07-08 08:38:59'),
-(7, '3,', 'Alice in Wonderland', 'Lewis Carroll', 'The story of a girl named Alice who falls down a rabbit hole into a fantasy world populated by peculiar and anthropomorphic creatures. The tale is filled with allusions to Dodgsons friends. The tale plays with logic in ways that have given the story lasting popularity with adults as well as children. It is considered to be one of the most characteristic examples of the genre of literary nonsense, and its narrative course and structure have been enormously influential, especially in the fantasy genre.', 0, 2999, '1604631360_books-1419613.jpg', '2021-09-02 15:33:31'),
-(8, '3,', 'Alice in Wonderland', '  Lewis Carroll', 'The story of a girl named Alice who falls down a rabbit hole into a fantasy world populated by peculiar and anthropomorphic creatures. The tale is filled with allusions to Dodgsons friends. The tale plays with logic in ways that have given the story lasting popularity with adults as well as children. It is considered to be one of the most characteristic examples of the genre of literary nonsense, and its narrative course and structure have been enormously influential, especially in the fantasy genre.', 0, 2499, '1604630880_books-1419613.jpg', '2021-09-02 15:39:07'),
-(10, '4,', ' In Search of Lost Time', 'Marcel Proust', 'Swann Way, the first part of A la recherche de temps perdu, Marcel Proust seven-part cycle, was published in 1913. In it, Proust introduces the themes that run through the entire work.', 0, 2000, '1604631420_books-1419613.jpg', '2021-09-02 17:53:55');
+(13, '1,2,4', 'Alice in Wonderland', 'Lewis Carroll', 'The story of a girl named Alice who falls down a rabbit hole into a fantasy world populated by peculiar and anthropomorphic creatures. The tale is filled with allusions to Dodgsons friends. The tale plays with logic in ways that have given the story lasting popularity with adults as well as children. It is considered to be one of the most characteristic examples of the genre of literary nonsense, and its narrative course and structure have been enormously influential, especially in the fantasy genre.', 0, 2399, '1604631360_books-1419613.jpg', '2021-09-12 16:59:40'),
+(14, '1,2', 'Alice in Wonderland', 'Lewis Carroll', 'as,dbaskhj \'', 0, 2299, '1604631960_python_book.jpg', '2021-09-13 03:29:30'),
+(15, '3,4', 'I Feel Bad About My Neck', 'Nora Ephron', 'asjhdfashdaksl', 0, 2000, '1604631960_python_book.jpg', '2021-09-13 03:32:30');
 
 -- --------------------------------------------------------
 
@@ -62,24 +62,6 @@ CREATE TABLE `cart` (
   `price` float NOT NULL,
   `customer_id` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`id`, `book_id`, `qty`, `price`, `customer_id`) VALUES
-(4, 2, 1, 1800, 2),
-(5, 3, 1, 2500, 2),
-(6, 1, 1, 2500, 2),
-(7, 1, 3, 2500, 1),
-(8, 2, 3, 1800, 1),
-(9, 3, 3, 2500, 1),
-(10, 3, 1, 2500, 3),
-(11, 2, 1, 1800, 3),
-(12, 2, 2, 1800, 3),
-(13, 2, 4, 1800, 3),
-(14, 3, 6, 2500, 3),
-(15, 3, 1, 2399, 3);
 
 -- --------------------------------------------------------
 
@@ -100,8 +82,9 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`id`, `name`, `description`) VALUES
 (1, 'Educational', 'Educational'),
 (2, 'Programming', 'Programming'),
-(3, 'Fantasy', 'Fantasy'),
-(4, 'Business', 'Business');
+(3, 'Fantasy', '  Fantasy'),
+(4, 'Business', 'Business'),
+(6, 'Story', 'Story');
 
 -- --------------------------------------------------------
 
@@ -126,7 +109,8 @@ CREATE TABLE `customers` (
 INSERT INTO `customers` (`id`, `name`, `address`, `contact`, `email`, `password`, `date_created`) VALUES
 (3, 'Manish Karki', 'Bkt', '123456890', 'manish@gmail.com', 'manish', '2021-07-11 08:14:29'),
 (4, 'Manish Karki', 'Bkt', '9843645188', 'manish@gmail.com', 'manish', '2021-07-11 08:15:00'),
-(5, 'Manis Karki', 'bkt', '9818692794', 'manis@gmail.com', 'manish', '2021-09-01 07:22:45');
+(5, 'Manis Karki', 'bkt', '9818692794', 'manis@gmail.com', 'manish', '2021-09-01 07:22:45'),
+(6, 'avddds', 'zsxdcvf', '0987654321', 'manish1@gmail.com', '59c95189ac895fcc1c6e1c38d067e244', '2021-09-12 20:49:53');
 
 -- --------------------------------------------------------
 
@@ -148,7 +132,8 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `customer_id`, `address`, `total_amount`, `status`, `date_created`) VALUES
-(1, 1, 'Sample address', 0, 1, '2020-11-06 15:26:12');
+(1, 3, 'Bkt', 9596, 0, '2021-09-13 17:25:50'),
+(2, 3, 'Bkt', 9596, 0, '2021-09-13 17:26:25');
 
 -- --------------------------------------------------------
 
@@ -169,8 +154,9 @@ CREATE TABLE `order_list` (
 --
 
 INSERT INTO `order_list` (`id`, `order_id`, `book_id`, `qty`, `price`) VALUES
-(1, 1, 1, 4, 2500),
-(2, 1, 2, 3, 1800);
+(1, 1, 3, 1, 2399),
+(2, 1, 13, 3, 2399),
+(3, 2, 3, 4, 2399);
 
 -- --------------------------------------------------------
 
@@ -276,37 +262,37 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `order_list`
 --
 ALTER TABLE `order_list`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `system_settings`
